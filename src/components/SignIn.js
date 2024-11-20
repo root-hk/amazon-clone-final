@@ -1,10 +1,6 @@
-// const SignIn = () => {
-//   return <div>signin</div>;
-// };
-// export default SignIn;
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import AmazonLogo from "../assets/amazonLogo.png";
+import AmazonLogo from "../assets/logo-amazon.svg";
 
 const SignIn = () => {
     const [isSignin, setSignin] = useState(true);
@@ -15,23 +11,15 @@ const SignIn = () => {
 
     const handleSignIn = (e) => {
         e.preventDefault();
-        // TODO : Logic
     };
 
     return (
-        <div className="relative flex flex-col gap-4 w-full max-w-screen overflow-x-hidden h-screen">
-            <div className="flex flex-col items-center gap-4 p-4">
+        <div className="relative flex flex-col gap-4 w-full max-w-screen overflow-x-hidden">
+            <div className="flex flex-col items-center gap-4 p-4 bg-gray-100">
                 <Link className="cursor-pointer flex amazon-logo items-start min-w-24" to={"/"}>
-                    <img
-                        // src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png?20220213013322"
-                        src={AmazonLogo}
-                        alt="Amazon Logo"
-                        height={38}
-                        className="h-9"
-                    />
-                    {/* <span>.in</span> */}
+                    <img src={AmazonLogo} alt="Amazon Logo" height={38} className="h-9" />
                 </Link>
-                <div className="flex flex-col border rounded divide-y w-min gap-4 p-5">
+                <div className="flex flex-col border-8 rounded-lg divide-y w-min gap-4 p-5 bg-gray-200">
                     <div className="flex flex-col w-min gap-2.5">
                         <span className="text-3xl mb-1.5">Sign {isSignin ? "in" : "up"}</span>
                         <form className="flex flex-col gap-1.5">
@@ -66,7 +54,7 @@ const SignIn = () => {
                             )}
                             <button
                                 type="submit"
-                                className="text-xs font-medium bg-[#ffd812] active:bg-primary-0 rounded-lg shadow p-1.5 my-2.5"
+                                className="text-xs font-medium bg-[#ffd812] hover:bg-[#ffd960] active:bg-primary-0 rounded-lg shadow p-1.5 my-2.5"
                             >
                                 Continue
                             </button>
@@ -102,21 +90,11 @@ const SignIn = () => {
                     <hr className="flex-1" />
                 </div>
                 <button
-                    className={`text-xs font-medium border shadow scale-105 rounded-lg w-80 active:bg-gray-100 py-1.5 px-2`}
+                    className={`text-xs font-medium border shadow scale-105 rounded-lg w-80 active:bg-gray-100 py-1.5 px-2 hover:bg-gray-200`}
                     onClick={() => setSignin(!isSignin)}
                 >
                     {isSignin ? "Create your Amazon account" : "Login to your Amazon account"}
                 </button>
-            </div>
-            <div className="bg-[#fcfcfc] flex flex-col items-center text-xs flex-1 gap-3 h-max">
-                <div className="auth-footer-seperation h-0.5 w-full"></div>
-                <div className="text-blue-700 flex scale-90 gap-7 pt-4">
-                    <span>Conditions of Use</span> <span>Privacy Notice</span>
-                    <span>Help</span>
-                </div>
-                <span className="text-gray-800 scale-90">
-                    © 1996-2024, Amazon.Eshank.Biz, Inc. or its affiliates
-                </span>
             </div>
         </div>
     );
