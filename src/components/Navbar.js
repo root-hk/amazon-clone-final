@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Sidebar from "./Sidebar";
+import ad from "../assets/ad.jpg";
 
 const Navbar = ({ onSearch }) => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -270,7 +271,7 @@ const Navbar = ({ onSearch }) => {
                         isSearchVisible ? "hidden md:flex" : "flex"
                     }`}
                 >
-                    <div className="flex items-center w-full px-4 py-2 space-x-4 text-base">
+                    <div className="flex items-center w-full px-4 py-2 space-x-4 text-base overflow-x-auto">
                         <div
                             className="flex items-center cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1"
                             onClick={toggleSidebar}
@@ -294,9 +295,9 @@ const Navbar = ({ onSearch }) => {
                         <p className="cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             MX Player
                         </p>
-                        <p className="cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
+                        {/* <p className="cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             Sell
-                        </p>
+                        </p> */}
                         <p className="cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             Gift Cards
                         </p>
@@ -318,11 +319,14 @@ const Navbar = ({ onSearch }) => {
                         <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             Gift Ideas
                         </p>
-                        <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
+                        {/* <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             Amazon Basics
-                        </p>
-                        <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
+                        </p> */}
+                        {/* <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
                             Home Improvement
+                        </p> */}
+                        <p className="hidden xl:block cursor-pointer hover:outline hover:outline-1 hover:outline-white px-2 py-1">
+                            <img src={ad} />
                         </p>
                     </div>
                 </div>
